@@ -57,7 +57,7 @@ export default function TenderForm() {
   const onSubmit = async (data, submitAndRepeat = false) => {
     try {
       // Submit tender data
-      const response = await fetch('http://localhost:4002/api/tender', {
+      const response = await fetch('/api/tender', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -73,7 +73,7 @@ export default function TenderForm() {
         reset();
       } else {
         // Generate PDF with all tenders
-        const pdfResponse = await fetch('http://localhost:4002/api/generate-pdf', {
+        const pdfResponse = await fetch('/api/generate-pdf', {
           method: 'POST'
         });
 
